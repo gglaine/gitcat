@@ -12,21 +12,25 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Host</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Trips</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Favorite Repos</a>
 
     <!-- Profile picture with dropdown list -->
-    <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <img src="#TODO" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
-        </ul>
+    <% if user_signed_in? %>
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <img src="#TODO" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li>
+              <%= link_to destroy_user_session_path, :method => :delete do %>
+                Log Out
+              <% end %>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 
   <!-- Dropdown appearing on mobile only -->

@@ -2,8 +2,22 @@
   <div class="row">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
       <div class="text-center">
-        <h1>Welcome To GitCat</h1>
-        <p>Login to enjoy</p>
+        <div class="card">
+
+            <% if !user_signed_in? %>
+              <h1>Welcome To GitCat</h1>
+              <h3>Your GitHub Search Engine</h3>
+              <%= link_to new_user_session_path do %>
+                  <div class="btn-signup btn-success">Login</div>
+              <% end %>
+              <%= link_to new_user_registration_path do %>
+                  <h5>New cat on the block ? Sign up here !</h5>
+
+              <% end %>
+            <% else %>
+              <h5>Welcome <%= "#{current_user.email}" %></h5>
+            <% end %>
+        </div>
       </div>
     </div>
   </div>
