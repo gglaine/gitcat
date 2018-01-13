@@ -3,21 +3,48 @@
     <div class="col-xs-12 col-md-6 col-md-offset-3">
       <div class="text-center">
         <div class="card">
-
-            <% if !user_signed_in? %>
-              <h1>Welcome To GitCat</h1>
-              <h3>Your GitHub Search Engine</h3>
-              <%= link_to new_user_session_path do %>
-                  <div class="btn-signup btn-success">Login</div>
-              <% end %>
-              <%= link_to new_user_registration_path do %>
-                  <h5>New cat on the block ? Sign up here !</h5>
-
-              <% end %>
-            <% else %>
-              <h5>Welcome <%= "#{current_user.email}" %></h5>
+          <% if !user_signed_in? %> <!-- if user is not logged-in -->
+            <h1>Welcome To GitCat</h1>
+            <h3>Your GitHub Search Engine</h3>
+            <%= link_to new_user_session_path do %>
+                <div class="btn-signup btn-success">Login</div>
+            <% end %>
+            <%= link_to new_user_registration_path do %>
+                <h5>New cat on the block ? Sign up here !</h5>
             <% end %>
         </div>
+        <div class="card">
+          <% else %> <!-- if user is logged-in -->
+            <h5>Welcome <%= "#{current_user.email}" %></h5>
+          <% end %>
+        </div>
+
+      <!-- HERE REACT COMPONENT -->
+        <div class="card results">
+          <h3>User's avatar</h3>
+
+          <!--  here display avatar pic -->
+
+          <h3>Users Repos</h3>
+
+          <ul>
+            <li>   <!--   make list flex   -->
+
+             <!-- here display repo name flex: 0 0 200px  -->
+
+             <!-- here display repo description flex: 1 0 80% -->
+
+             <!-- here display watchers count -->
+
+            <!--  here make repo starred -->
+
+            </li>
+          </ul>
+
+
+
+        </div>
+
       </div>
     </div>
   </div>
