@@ -13,37 +13,16 @@
                 <h5>New cat on the block ? Sign up here !</h5>
             <% end %>
         </div>
+
+        <% else %>
         <div class="card">
-          <% else %> <!-- if user is logged-in -->
-            <h5>Welcome <%= "#{current_user.email}" %></h5>
-          <% end %>
+           <!-- if user is logged-in -->
+          <h5>Welcome <%= "#{current_user.email}" %></h5>
+
+          <h5>Search a github user by name</h5>
+          <div class="userName"></div>
         </div>
-
-      <!-- HERE REACT COMPONENT -->
-        <div class="card results">
-          <h3>User's avatar</h3>
-
-          <!--  here display avatar pic -->
-
-          <h3>Users Repos</h3>
-
-          <ul>
-            <li>   <!--   make list flex   -->
-
-             <!-- here display repo name flex: 0 0 200px  -->
-
-             <!-- here display repo description flex: 1 0 80% -->
-
-             <!-- here display watchers count -->
-
-            <!--  here make repo starred -->
-
-            </li>
-          </ul>
-
-
-
-        </div>
+        <% end %>
 
       </div>
     </div>

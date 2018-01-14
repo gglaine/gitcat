@@ -36,8 +36,8 @@ gem 'simple_form'
 # gem 'capistrano-rails', group: :development
 
 gem 'github_api'
-gem 'react-rails'
-gem 'webpacker', '~> 3.0'
+
+gem 'webpacker'
 
 gem 'acts_as_votable'
 
